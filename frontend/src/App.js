@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <h1>Welcome to the Customer Assistant Application</h1>
+      <h1>Welcome to the Customer Account Manager</h1>
       <Button variant="contained" color="primary" onClick={handleButtonClick}>
         {showContent ? 'Hide Account Details' : 'Manage Account'}
       </Button>
