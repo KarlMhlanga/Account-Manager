@@ -1,18 +1,17 @@
+/* src/App.css */
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #282c34;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  font-size: 1.5rem !important;
+  text-transform: uppercase;
+  font-weight: 300 !important;
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,38 +21,45 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.App-button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  margin: 20px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-color: #61dafb;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.App-button:hover {
-  background-color: #4fa3c0;
+.App-buttons .MuiButton-root {
+  margin: 10px;
+  width: 100%; /* Full width for buttons */
+  max-width: 300px; /* Maximum width to prevent buttons from becoming too wide */
 }
 
 .App-details {
   margin-top: 20px;
-  text-align: left;
+    width: 100%;
+    max-width: 30rem;
+    text-align: left;
+    padding: 0 20px;
+    background-color: #cecece;
+    color: black;
+    border-radius: 15px;}
+
+.App-details ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-details li {
+  margin-bottom: 10px;
+}
+
+button.App-button {
+  padding: .5rem;
+  margin: 2%;
+  width: 10rem;
+  font-size: 1rem;
 }
