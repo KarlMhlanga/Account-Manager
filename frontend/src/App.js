@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './App.css';
 
 function App() {
-  const [showContent, setShowContent] = useState(false);
+  const [data, setData] = useState({});
+  const [showDetails, setShowDetails] = useState(false);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/account/status')
+      .then(response => setData(response.data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   const handleButtonClick = () => {
-    setShowContent(prevShowContent => !prevShowContent);
+    setShowDetails(!showDetails);
   };
 
   return (
-    <div>
-      <h1>Welcome to the Customer Account Manager</h1>
-      <Button variant="contained" color="primary" onClick={handleButtonClick}>
-        {showContent ? 'Hide Account Details' : 'Manage Account'}
-      </Button>
-      {showContent && (
-        <div className="account-details">
-          <p>Account Status: Active</p>
-          <p>Balance: $120.50</p>
-          <p>Due Date: 2024-07-15</p>
-        </div>
-      )}
+    <div className="App">
+      <header className="App-header">
+        <h1>Customer Assistant Application</h1>
+        <button className="App-button" onClick={handleButtonClick}>
+          {showDetails ? 'Hide Details' : 'Show Details'}
+        </button>
+        {showDetails && (
+          <div className="App-details">
+            <h2>Account Status</h2>
+            <p>Status: {data.status}</p>
+            <p>Balance: ${data.balance}</p>
+            <p>Due Date: {data.dueDate}</p>
+          </div>
+        )}
+      </header>
     </div>
   );
 }

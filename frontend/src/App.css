@@ -28,6 +28,27 @@
   color: #61dafb;
 }
 
+.App-button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #61dafb;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.App-button:hover {
+  background-color: #4fa3c0;
+}
+
+.App-details {
+  margin-top: 20px;
+  text-align: left;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,40 +56,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.account-details {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.account-details p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-h1 {
-  color: #333;
-}
-
-p {
-  font-size: 18px;
-}
-
-.loading {
-  font-size: 20px;
-  color: #666;
-}
-
-.error {
-  color: red;
-  font-size: 18px;
 }
